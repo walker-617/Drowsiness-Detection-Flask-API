@@ -11,13 +11,13 @@ def find_area(face):
     d=face.bottom()
     return a*b*c*d
 
-def get_coordinates(image):
+def get_landmarks(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     faces = detector(gray)
 
     if len(faces)==0:
-        print("no face detected")
+        return None
     else:
         max_area_face=faces[0]
         max_area=0
@@ -29,7 +29,3 @@ def get_coordinates(image):
         landmarks = predictor(gray, max_area_face)
         coordinates = [[point.x, point.y] for point in landmarks.parts()]
         return coordinates
-
-image=cv2.imread("test.jpg")
-coordinates=get_coordinates(image)
-print(coordinates) 
