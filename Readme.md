@@ -4,55 +4,47 @@ This is a Flask API that detects faces in an image using the dlib library and re
 
 ## Installation
 
->Note: It is suggested to create a virtual environment cause we use lower versions of Python to use dlib library.
+Note
+- It is suggested to create a virtual environment cause we use lower versions of Python to use dlib library.
+- Python3.8 is recommended.
 
->You can create and activate a virtual environment in Python using the following commands
+You can create and activate a virtual environment in Python using the following commands
 ```bash
 python --version
 ```
 
->If the Python version is not 3.7 3.8 or 3.9 then download any of the versions.
-
->After installing any of the above three versions create a virtual environment with that version.
-
->Let's say we installed the 3.8 version then the command goes like this
+If the Python version is not 3.7 3.8 or 3.9 then download any of the versions.
+After installing any of the above three versions create a virtual environment with that version.
+Let's say we installed the 3.8 version then the command goes like this
 
 ```bash
 python3.8 -m venv my_env
 ```
 
->Activate the virtual environment using the following command
+Activate the virtual environment using the following command
 ```bash
 my_env\Scripts\activate
 ```
->The terminal will look like this
+The terminal will look like this
 ```bash
 (my_env) PS C:\Users\lenovo\WALKER\Drowsiness Detection\Drowsiness Detection Flask API>
 ```
 
-> We cannot directly install dlib library from [pip](https://pip.pypa.io/en/stable/) package manager. Instead, we have to download the wheel file separately to install it.
+We cannot directly install dlib library from [pip](https://pip.pypa.io/en/stable/) package manager. Instead, we use the wheel file separately to install it.
 
->Download the dlib .whl file from [https://github.com/sachadee/Dlib/tree/main](https://github.com/sachadee/Dlib/tree/main) which matches your current version of python. For Python 3.7 it's numbered 37, for 3.8 it's 38 and for 3.9 it's 39.
+Download the dlib .whl file from [https://github.com/sachadee/Dlib/tree/main](https://github.com/sachadee/Dlib/tree/main) which matches your current version of python. 
 
->Now copy the path of the wheel file downloaded. It should look like this
-```bash
-"C:\Users\lenovo\Downloads\dlib-19.22.99-cp38-cp38-win_amd64.whl"
-```
->Now install dlib using pip
-```bash
-pip install "C:\Users\lenovo\Downloads\dlib-19.22.99-cp38-cp38-win_amd64.whl"
-```
+For Python 3.7 it's numbered 37, for 3.8 it's 38, and for 3.9 it's 39 and place it in the working directory.
 
-> You can check the installed libraries by
-```bash
-pip list
-```
+Currently we are using the python3.8 version dlib library in the repository. 
 
-Now install the remaining dependencies from requirements.txt.
+Now install the dependencies from requirements.txt and wheel file.
 
 ```bash
-pip install -r requirements.txt
+pip install -r .\requirements.txt, "dlib-19.22.99-cp38-cp38-win_amd64.whl"
 ```
+
+Remember to replace the wheel file according to the python version being used.
 
 ## How to run
 ```bash
