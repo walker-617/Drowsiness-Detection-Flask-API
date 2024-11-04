@@ -2,7 +2,7 @@
 
 This is a Flask API that detects faces in an image using the dlib library and returns 68 facial points as a response.
 
-## Installation
+## Installation for windows
 
 Note
 - It is suggested to create a virtual environment cause we use lower versions of Python to use dlib library.
